@@ -3,20 +3,19 @@ Vulnerable-Routers
 
 Vulnerable routers that doesn't have any fix till date
 
-I WILL NOT MANUALLY UPDATE THIS REPOSITORY ANYMORE
+Source: An additional listing of vulnerable devices has been compiled and placed in below link by a developer:
+https://github.com/elvanderb/TCP-32764
+ 
+Some random code/data about the backdoor we found in my inksys WAG200G (TCP/32764).
 
-If you want to add a router in the list, please make a pull-request, also remember to USE THE POC and paste the result in your pull-request. Telnet clients and other solutions may not be relevant (some false negative / positive reported).
-
-Some random code/data about the backdoor I found in my Linksys WAG200G (TCP/32764).
-
-The backdoor may be present in other hardware, I'll update this readme accordingly. :)
+The backdoor may be present in other hardware, We'll update this readme accordingly.
 
 Possible fix :
 
-if it's listening on the internet: add a firewall rule in the web UI (@domainzero)
-it also seems to work on the LAN side. (issue 35)
+If it's listening on the internet: add a firewall rule in the web UI (@domainzero)
+It also seems to work on the LAN side. (issue 35)
 but apparently, not for every body (issue 57) so use the PoC again after adding the rule to make sure the firewall does its job.
-install an open source firmware (for example OpenWRT or Tomato) this is NOT magical, OpenWAG200 is vuln: http://sourceforge.net/projects/openwag200/files/OpenWAG200/1.4/
+Install an open source firmware (for example OpenWRT or Tomato) this is NOT magical, OpenWAG200 is vuln: http://sourceforge.net/projects/openwag200/files/OpenWAG200/1.4/
 kill the backdoor after each reboot (issue 61 & TCP-32764-First-Aid)
 use this alternative firmware: amod (thank you pidocchio and nremond)
 redirect the port traffic in your router firewall to a local unused IP and done ([@osisecurite])
