@@ -5,13 +5,22 @@ Vulnerable routers that doesn't have any fix till date
 
 Source: An additional listing of vulnerable devices has been compiled and placed in below link by a developer:
 https://github.com/elvanderb/TCP-32764
+
+More information:
+More information on official CISCO website:
+------------------------------------------------------
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20140110-sbd 
+
+Article on CISCO Routers:
+---------------------------------
+http://www.cio.com/article/745860/Cisco_Promises_to_Fix_Admin_Backdoor_in_Some_Routers?source=rss_security&utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+cio%2Ffeed%2Fdrilldowntopic%2F3089+%28CIO.com+-+Security%29&utm_content=Netvibes 
  
-Some random code/data about the backdoor we found in my inksys WAG200G (TCP/32764).
+Some random code/data about the backdoor we found in inksys WAG200G (TCP/32764).
 
 The backdoor may be present in other hardware, We'll update this readme accordingly.
 
 Possible fix :
-
+-------------------------------
 If it's listening on the internet: add a firewall rule in the web UI (@domainzero)
 It also seems to work on the LAN side. (issue 35)
 but apparently, not for every body (issue 57) so use the PoC again after adding the rule to make sure the firewall does its job.
@@ -111,6 +120,27 @@ Netgear WNR2000v3 (issue 43)
 Netgear WNR3500L firmware V1.2.2.30_34.0.37 (issue 65)
 Netgear WNR3500Lv2
 Sercomm AD81ABA
-Some clarifications: I didn't want to waste my time in writing a full report, it's a very simple backdoor that really doesn't deserve more than some crappy slides. Moreover, my English is quite bad.
 
-I had a lot of fun in writing / drawing the slides, all the necessary information is in them. If people don't understand them or find them "too full of meme" then - well - it's too bad for them. :)
+Summary:
+--------------------------
+Cisco has disclosed the existence of an undocumented backdoor in several of their routers offerings which could a remote attacker to “gain root-level access to an affected device” by way of an unknown test interface in the TCP service listening on port 32764
+
+Confidentiality:
+--------------------------
+On many devices this undocumented interface can only be accessed from the local or wireless network, but on some devices it is also accessible from the Internet. There could be potential instances where attackers can gain access to these devices from internet and gather information for personal benefits.
+
+Integrity:
+------------------------
+It is stated that an attacker could exploit this vulnerability by accessing the affected device from the LAN-side interface and issuing arbitrary commands in the underlying operating system. An exploit could allow the attacker to access user credentials for the administrator account of the device, manipulate them at his will and read the device configuration. It can also allow attacker to issue arbitrary commands on the device with escalated privileges.
+
+Availability:
+---------------------------
+Currently there is no report that this swath of devices that have this backdoor issue are attacked from outsiders. As attacker can issue commands from remote locations, once accessed, he can manipulate the device and effect it’s availability at his will through internet.
+
+
+Resolution:
+----------------------
+1.	Cisco said that currently there are no workarounds that would mitigate the vulnerabilities, but they are planning to release software updates to mitigate them. The significant downside to this announcement is that these devices will remain unpatched for the foreseeable future till the updates are in position.
+2.	At most, wireless users should be aware of such attacks and be vigilant in upgrading their antivirus and device firmware as soon as upgrades are released.
+
+
