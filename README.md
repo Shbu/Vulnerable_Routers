@@ -57,11 +57,11 @@ Confirmed by a header (socket_header.h) in cisco gpl sources (thank you Andreas 
 
 Backdoor LISTENING ON THE INTERNET confirmed in :
 ------------------------------------------------
-•	Linksys WAG120N (@p_w999)
-•	Netgear DG834B V5.01.14 (@domainzero)
-•	Netgear DGN2000 1.1.1, 1.1.11.0, 1.3.10.0, 1.3.11.0, 1.3.12.0 (issue 44)
-•	Netgear WPNT834 (issue 79)
-•	OpenWAG200 maybe a little bit TOO open ;) (issue 49)
+ * Linksys WAG120N (@p_w999)
+ *	Netgear DG834B V5.01.14 (@domainzero)
+ *	Netgear DGN2000 1.1.1, 1.1.11.0, 1.3.10.0, 1.3.11.0, 1.3.12.0 (issue 44)
+ *	Netgear WPNT834 (issue 79)
+ *	OpenWAG200 maybe a little bit TOO open ;) (issue 49)
 
 
 Backdoor confirmed in:
